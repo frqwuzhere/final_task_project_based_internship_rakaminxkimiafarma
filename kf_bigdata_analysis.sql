@@ -1,3 +1,44 @@
+## Tabel Analisa
+CREATE TABLE `rakamin-kf-analytics-447401.kimia_farma.kf_tabel_analisa`  AS 
+SELECT 
+  final_transaction.transaction_id,
+  final_transaction.date,
+  final_transaction.branch_id,
+  branch.branch_name,
+  branch.kota,
+  branch.provinsi,
+  branch.rating AS branch_rating,
+  final_transaction.customer_name,
+  final_transaction.product_id,
+  product.product_name,
+  final_transaction.price AS actual_price,
+  final_transaction.discount_percentage,
+  CASE
+    WHEN final_transaction.price  500000 THEN 0.3
+    WHEN final_transaction.price  300000 THEN 0.25
+    WHEN final_transaction.price  100000 THEN 0.2
+    WHEN final_transaction.price  50000 THEN 0.15
+    ELSE 0.1
+  END AS presentase_gross_laba,
+  final_transaction.price - (final_transaction.price  final_transaction.discount_percentage) AS nett_sales,
+  CASE
+    WHEN final_transaction.price  500000 THEN ROUND(final_transaction.price  (0.3 - final_transaction.discount_percentage),0)
+    WHEN final_transaction.price  300000 THEN ROUND(final_transaction.price  (0.25 - final_transaction.discount_percentage),0)
+    WHEN final_transaction.price  100000 THEN ROUND(final_transaction.price  (0.2 - final_transaction.discount_percentage),0)
+    WHEN final_transaction.price  50000 THEN ROUND(final_transaction.price  (0.15 - final_transaction.discount_percentage),0)
+    ELSE ROUND(final_transaction.price  (0.1 - final_transaction.discount_percentage),0)
+  END AS nett_profit,
+  final_transaction.rating AS transaction_rating
+FROM `rakamin-kf-analytics-447401.kimia_farma.kf_final_transaction` AS final_transaction
+LEFT JOIN `rakamin-kf-analytics-447401.kimia_farma.kf_product` AS product
+ON final_transaction.product_id = product.product_id
+LEFT JOIN `rakamin-kf-analytics-447401.kimia_farma.kf_kantor_cabang` AS branch
+ON final_transaction.branch_id = branch.branch_id;
+
+
+
+
+
 ## 1. Perbandingan Pendapatan Kimia Farma dari tahun ke tahun
 SELECT
   EXTRACT(YEAR FROM date) AS Year,
