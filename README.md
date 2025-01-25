@@ -40,6 +40,16 @@
 
 ## ⚙ Dashboard Visualization Data
 
-![Dashboard Visualization - Application](https://github.com/MuhammadAuliaa/etl-pentaho-credit-data/blob/main/screenshoot/dashboard.png)
+#### ▶ Summary Section
+
+![Summary Section](https://github.com/frqwuzhere/final_task_project_based_internship_rakaminxkimiafarma/blob/main/img/summary_section.png)
+
+#### ▶ Region & Branch Section
+
+![Region & Branch Section](https://github.com/frqwuzhere/final_task_project_based_internship_rakaminxkimiafarma/blob/main/img/region_branch_section.png)
+
+#### ▶ Product & Customer Section
+
+![Product & Customer Section](https://github.com/frqwuzhere/final_task_project_based_internship_rakaminxkimiafarma/blob/main/img/product_customer_section.png)
 
 - The dashboard visualization above is presented based on transaction data from sales every year, which incorporates various content that can be visualized. The dashboard consists of 3 sections, there are summary, region and branch, and product and customer.<br>
