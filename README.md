@@ -9,6 +9,7 @@
 - [About Project]
 - [Objectives]
 - [Data Analysis]
+  - [File Description]
   - [Analysis Method]
 - [Dashboard Visualization]
   <br>
@@ -28,6 +29,13 @@
   <br><br>
 
 ## ⚙ Data Analysis
+
+### 📁 File Description
+
+- kf_bigdata_analysis.sql. This file consist general query for EDA.
+- kf_bigdata_analysis.ipynb. This python file used to analyse deeper than in sql. Another analysis method is in this file, like RFM Analysis, Cohort, etc.
+- table_analisa.ipynb. Python file to create tabel analisa, so the analysis can work in python.
+- img. Folder consist image for dashboard.
 
 ### 👨‍💼 Analysis Method
 
